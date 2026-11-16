@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharat CNC Work | Premium CNC 3D Carving Door Design in Wood</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #1c1008;
+      --bg-wood: #2a180d;
+      --card-bg: #361f11;
+      --gold-light: #f9e29c;
+      --gold-main: #d4af37;
+      --gold-dark: #996515;
+      --text-light: #fdf8ee;
+      --text-muted: #d6c5b3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      background-image: radial-gradient(circle at top right, #3d2212 0%, #1c1008 60%);
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(28, 16, 8, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--gold-light), var(--gold-main), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #ffffff;
+      -webkit-text-fill-color: #ffffff;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav button:hover, nav button.active {
+      color: var(--bg-dark);
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-main));
+      font-weight: 600;
+    }
+
+    /* Page Sections */
+    .page-section {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 5%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-main), var(--gold-dark));
+      color: #1c1008;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3.2rem;
+      line-height: 1.15;
+      margin-bottom: 15px;
+      background: linear-gradient(to bottom, #fff5d6, var(--gold-main));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: 2.4rem;
+      -webkit-text-fill-color: #ffffff;
+    }
+
+    .hero p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      border: 1px solid var(--gold-main);
+      background: rgba(212, 175, 55, 0.08);
+      padding: 15px 20px;
+      border-radius: 12px;
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+      color: var(--gold-light);
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-main));
+      color: #1c1008;
+      padding: 13px 26px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.35);
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1.5px solid var(--gold-main);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.15);
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 3px solid var(--gold-main);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Section Title */
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title span {
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-main), var(--gold-dark));
+      color: #1c1008;
+      font-weight: 700;
+      padding: 6px 24px;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      display: inline-block;
+    }
+
+    /* Wooden Designs Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .design-card {
+      background: var(--card-bg);
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .design-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+    }
+
+    .design-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-bottom: 1.5px solid var(--gold-main);
+    }
+
+    .design-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .design-info h3 {
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .design-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .inquire-mini-btn {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-main);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .inquire-mini-btn:hover {
+      background: var(--gold-main);
+      color: #1c1008;
+      font-weight: 600;
+    }
+
+    /* Our Work Includes */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      background: rgba(54, 31, 17, 0.6);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .service-item i {
+      color: var(--gold-main);
+      font-size: 1.25rem;
+    }
+
+    /* Features Strip */
+    .features-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-main));
+      color: #1c1008;
+      padding: 22px;
+      border-radius: 14px;
+      margin-top: 35px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .feature-box i {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Inquiry Page Form */
+    .inquiry-wrapper {
+      max-width: 750px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: 18px;
+      border: 2px solid var(--gold-main);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .inquiry-wrapper h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-light);
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 1.9rem;
+    }
+
+    .inquiry-wrapper p.sub {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold-light);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      background: #1c1008;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold-light);
+    }
+
+    .whatsapp-submit {
+      width: 100%;
+      background: #25D366;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .whatsapp-submit:hover {
+      background: #1ebe5d;
+    }
+
+    /* Footer */
+    footer {
+      background: #120904;
+      border-top: 2px solid var(--gold-main);
+      padding: 35px 5%;
+      margin-top: 50px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .owner-card {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-main));
+      color: #1c1008;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .location-info {
+      max-width: 550px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .location-info strong {
+      color: var(--gold-light);
+    }
+
+    .tagline {
+      text-align: center;
+      margin-top: 25px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .cta-group {
+        justify-content: center;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="logo">BHARAT <span>CNC WORK</span></div>
+    <nav>
+      <button id="nav-home" class="active" onclick="showPage('home')">Home & Designs</button>
+      <button id="nav-inquiry" onclick="showPage('inquiry')"><i class="fab fa-whatsapp"></i> Inquiry Page</button>
+    </nav>
+  </header>
+
+  <!-- HOME PAGE -->
+  <main id="page-home" class="page-section active">
+    <section class="hero">
+      <div>
+        <div class="badge">Premium CNC 3D Carving Door Design in Wood</div>
+        <h1>Bharat <span>CNC Work</span></h1>
+        <p>Beautifully crafted CNC 3D carving design with approximately 5mm depth and highly detailed finishing. The design is made with precision on wood, giving the door a premium and elegant look.</p>
+        <div class="highlight-box">
+          <i class="fas fa-award"></i> Excellent finishing and fine detailing make this custom CNC carving suitable for modern and decorative wooden doors.
+        </div>
+        <div class="cta-group">
+          <button class="btn-primary" onclick="showPage('inquiry')">
+            <i class="fab fa-whatsapp"></i> Send Design Inquiry
+          </button>
+          <a href="tel:+916398526775" class="btn-outline">
+            <i class="fas fa-phone-alt"></i> +91 63985 26775
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Premium Carved Wooden Door">
+      </div>
+    </section>
+
+    <!-- Auto-loaded Online Wooden Designs Gallery -->
+    <section class="section-container">
+      <div class="section-title">
+        <span>Featured Wooden Carving Designs</span>
+      </div>
+
+      <div class="gallery-grid" id="woodenGallery">
+        <!-- Designs automatically injected via JS -->
+      </div>
+    </section>
+
+    <!-- Our Work Includes -->
+    <section class="section-container">
+      <div class="section-title">
+        <span>Our Work Includes</span>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item"><i class="fas fa-check-circle"></i> CNC 3D Carving</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Modern & Decorative Designs</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Wooden Door Design</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> High Precision Work</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Custom CNC Design</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Elegant Look</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Premium Finishing</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Premium Quality</div>
+      </div>
+
+      <div class="features-bar">
+        <div class="feature-box"><i class="fas fa-cog"></i>Precision Work</div>
+        <div class="feature-box"><i class="fas fa-gem"></i>Premium Quality</div>
+        <div class="feature-box"><i class="fas fa-handshake"></i>Customer Satisfaction</div>
+        <div class="feature-box"><i class="fas fa-thumbs-up"></i>On-Time Service</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- INQUIRY PAGE -->
+  <section id="page-inquiry" class="page-section">
+    <div class="inquiry-wrapper">
+      <h2>Design & Order Inquiry</h2>
+      <p class="sub">Apni details bharein — aapki inquiry seedhe <strong>Aakib (Bharat CNC Work)</strong> ke WhatsApp par chali jayegi.</p>
+
+      <form id="whatsappInquiryForm" onsubmit="sendToWhatsApp(event)">
+        <div class="form-group">
+          <label for="custName">Your Name (Aapka Naam) *</label>
+          <input type="text" id="custName" placeholder="Apna naam likhein..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="custPhone">Mobile Number *</label>
+          <input type="tel" id="custPhone" placeholder="Apna WhatsApp/Mobile number likhein..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="workType">Select Design / Work Type *</label>
+          <select id="workType" required>
+            <option value="CNC 3D Carving Wooden Door">CNC 3D Carving Wooden Door</option>
+            <option value="Floral 3D Carving Panel">Floral 3D Carving Panel</option>
+            <option value="Mandala / Round Carving Design">Mandala / Round Carving Design</option>
+            <option value="Custom CNC Wood Design">Custom CNC Wood Design</option>
+            <option value="Modern Decorative Door Design">Modern Decorative Door Design</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="doorSize">Door Size / Wood Type (Optional)</label>
+          <input type="text" id="doorSize" placeholder="Jaise: 7x3 feet, Sagwan / Teak wood...">
+        </div>
+
+        <div class="form-group">
+          <label for="custMessage">Additional Details / Message</label>
+          <textarea id="custMessage" rows="3" placeholder="Design ke baare mein koi khaas jaankari likhein..."></textarea>
+        </div>
+
+        <button type="submit" class="whatsapp-submit">
+          <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Send Inquiry on WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="owner-card">
+        <div>Owner: Aakib</div>
+        <div style="font-size: 1.1rem; margin-top: 4px;"><i class="fas fa-phone"></i> +91 63985 26775</div>
+      </div>
+
+      <div class="location-info">
+        <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Bakra Market Near By Dildaar Hardware Store, Muzaffarnagar, Uttar Pradesh – 251001</p>
+      </div>
+    </div>
+    <div class="tagline">
+      “Your Dream Design... Our Craftsmanship...”
+    </div>
+  </footer>
+
+  <script>
+    // Online wooden carving images (no manual upload required)
+    const woodenDesigns = [
+      {
+        title: "Floral Vine 3D Door Carving",
+        desc: "5mm depth precision floral scroll carving for main entrance doors.",
+        img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        title: "Royal Heritage Carved Door",
+        desc: "Traditional intricate wood craftsmanship with smooth satin finish.",
+        img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        title: "Mandala Motif Wooden Panel",
+        desc: "Centerpiece circular 3D CNC carving for luxury wooden doors.",
+        img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        title: "Modern Geometric & Floral Wood",
+        desc: "Contemporary CNC carved wooden textures for home interiors.",
+        img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
+
+    // Load designs into gallery
+    const galleryContainer = document.getElementById("woodenGallery");
+    woodenDesigns.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "design-card";
+      card.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" loading="lazy">
+        <div class="design-info">
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+          <button class="inquire-mini-btn" onclick="selectDesignForInquiry('${item.title}')">
+            <i class="fab fa-whatsapp"></i> Inquire This Design
+          </button>
+        </div>
+      `;
+      galleryContainer.appendChild(card);
+    });
+
+    // Switch between Home and Inquiry Page
+    function showPage(pageName) {
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById('page-' + pageName).classList.add('active');
+      document.getElementById('nav-' + pageName).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Pre-fill design name when clicking "Inquire This Design"
+    function selectDesignForInquiry(designName) {
+      showPage('inquiry');
+      const selectBox = document.getElementById('workType');
+      const optionExists = Array.from(selectBox.options).some(opt => opt.value === designName);
+      if (!optionExists) {
+        const newOpt = new Option(designName, designName, true, true);
+        selectBox.add(newOpt);
+      } else {
+        selectBox.value = designName;
+      }
+    }
+
+    // Format details and redirect to WhatsApp
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      const ownerWhatsApp = "916398526775"; // Bharat CNC Work - Aakib
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const workType = document.getElementById("workType").value;
+      const doorSize = document.getElementById("doorSize").value.trim() || "Not specified";
+      const message = document.getElementById("custMessage").value.trim() || "Please share price and details.";
+
+      const whatsappText =
+        `*New Website Inquiry - Bharat CNC Work*%0A` +
+        `----------------------------------%0A` +
+        `*Name:* ${encodeURIComponent(name)}%0A` +
+        `*Mobile:* ${encodeURIComponent(phone)}%0A` +
+        `*Design/Work:* ${encodeURIComponent(workType)}%0A` +
+        `*Size/Wood:* ${encodeURIComponent(doorSize)}%0A` +
+        `*Message:* ${encodeURIComponent(message)}`;
+
+      const whatsappURL = `https://wa.me/${ownerWhatsApp}?text=${whatsappText}`;
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
+</body>
+</html>
