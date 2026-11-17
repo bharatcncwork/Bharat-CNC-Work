@@ -41,7 +41,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(20, 10, 5, 0.94);
+      background: rgba(20, 10, 5, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1.5px solid rgba(212, 155, 75, 0.35);
       padding: 12px 5%;
@@ -288,11 +288,11 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
 
-    /* 4 Wooden Designs Grid (Clean without individual buttons) */
+    /* 5 Wooden Designs Responsive Grid */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
     }
 
     .design-card {
@@ -516,57 +516,95 @@
       background: #1ebe5d;
     }
 
-    /* Footer */
+    /* Footer with Prominent Owner & Address Cards */
     footer {
       background: #0d0603;
       border-top: 2px solid var(--copper-gold);
-      padding: 35px 5%;
+      padding: 40px 5% 30px 5%;
       margin-top: 50px;
     }
 
     .footer-grid {
       max-width: 1200px;
       margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 24px;
+      align-items: stretch;
     }
 
     .owner-card {
       background: linear-gradient(135deg, var(--teak-light), var(--copper-gold));
       color: #140a05;
-      padding: 12px 24px;
-      border-radius: 12px;
+      padding: 18px 24px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .owner-card .label-small {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
       font-weight: 700;
+      opacity: 0.85;
     }
 
-    .location-info {
-      max-width: 550px;
-      font-size: 0.95rem;
-      color: var(--sand-muted);
+    .owner-card .owner-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 2px 0 6px 0;
     }
 
-    .location-info strong {
+    .owner-card a {
+      color: #140a05;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .location-card {
+      background: var(--card-walnut);
+      border: 1.5px solid var(--copper-gold);
+      padding: 18px 24px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .location-card .loc-heading {
       color: var(--teak-light);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .location-card p {
+      color: var(--cream-text);
+      font-size: 0.98rem;
+      line-height: 1.5;
     }
 
     .tagline {
       text-align: center;
-      margin-top: 25px;
+      margin-top: 28px;
       padding-top: 18px;
       border-top: 1px solid rgba(212, 155, 75, 0.25);
       font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--teak-light);
-      font-size: 1.15rem;
-    }
-
-    @media (max-width: 900px) {
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      font-size: 1.2rem;
     }
 
     @media (max-width: 820px) {
@@ -580,10 +618,7 @@
       .hero h1 {
         font-size: 2.5rem;
       }
-    }
-
-    @media (max-width: 520px) {
-      .gallery-grid {
+      .footer-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -608,14 +643,10 @@
               <stop offset="100%" stop-color="#7a4416"/>
             </linearGradient>
           </defs>
-          <!-- Wooden Texture Background -->
           <rect width="100" height="100" fill="url(#woodBase)"/>
           <path d="M0,20 Q50,12 100,22 M0,45 Q50,55 100,42 M0,75 Q50,65 100,78" stroke="#472409" stroke-width="2" fill="none" opacity="0.45"/>
-          <!-- Carved Inner Frame -->
           <rect x="7" y="7" width="86" height="86" rx="10" fill="none" stroke="#f0c78a" stroke-width="2.5"/>
-          <!-- 3D Carved Letter "B" -->
           <text x="50" y="64" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-weight="900" font-size="54" fill="url(#carvedB)" stroke="#3b1c06" stroke-width="1.5">B</text>
-          <!-- Decorative Wood Leaf Accent -->
           <path d="M26,78 Q50,70 74,78" stroke="#f0c78a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
         </svg>
       </div>
@@ -651,12 +682,13 @@
         </div>
       </div>
 
+      <!-- Featured Main Photo (design1.png) -->
       <div class="hero-wood-panel">
         <img src="design1.png" alt="Bharat CNC 3D Wooden Door Carving">
       </div>
     </section>
 
-    <!-- 4 Real Wooden Carving Designs Gallery (Without individual inquiry buttons) -->
+    <!-- All 5 PNG Wooden Carving Designs Gallery -->
     <section class="section-container">
       <div class="section-title">
         <span>3D Wooden Door Carving Gallery</span>
@@ -665,17 +697,27 @@
       <div class="gallery-grid">
         <div class="design-card">
           <div class="wood-preview-box">
-            <img src="design1.png" alt="Corner Floral Scroll Carving">
+            <img src="design1.png" alt="Royal Full Door Floral Carving">
           </div>
           <div class="design-info">
-            <h3>Corner Floral Scroll Carving</h3>
-            <p>5mm depth curved floral & leaf relief carving on solid wood.</p>
+            <h3>Royal Floral Door Carving</h3>
+            <p>5mm deep intricate floral & scroll work on solid wood.</p>
           </div>
         </div>
 
         <div class="design-card">
           <div class="wood-preview-box">
-            <img src="design2.png" alt="Vertical Door Center Panel">
+            <img src="design2.png" alt="Corner Floral Scroll Carving">
+          </div>
+          <div class="design-info">
+            <h3>Corner Floral Scroll Carving</h3>
+            <p>Curved floral & leaf relief carving for wooden door panels.</p>
+          </div>
+        </div>
+
+        <div class="design-card">
+          <div class="wood-preview-box">
+            <img src="design3.png" alt="Vertical Door Center Panel">
           </div>
           <div class="design-info">
             <h3>Vertical Door Center Panel</h3>
@@ -685,7 +727,7 @@
 
         <div class="design-card">
           <div class="wood-preview-box">
-            <img src="design3.png" alt="Circular Lotus Mandala Panel">
+            <img src="design4.png" alt="Circular Lotus Mandala Panel">
           </div>
           <div class="design-info">
             <h3>Circular Lotus Mandala Panel</h3>
@@ -695,7 +737,7 @@
 
         <div class="design-card">
           <div class="wood-preview-box">
-            <img src="design4.png" alt="Framed Vine Door Carving">
+            <img src="design5.png" alt="Framed Vine Door Carving">
           </div>
           <div class="design-info">
             <h3>Framed Vine Door Carving</h3>
@@ -714,4 +756,136 @@
           <span class="custom-tag"><i class="fas fa-check"></i> Any Door & Panel Size</span>
           <span class="custom-tag"><i class="fas fa-check"></i> 3D & 2D Custom Patterns</span>
         </div>
-        <button class="btn-primary" onclick="showPage('inquiry
+        <button class="btn-primary" onclick="showPage('inquiry')">
+          <i class="fab fa-whatsapp"></i> Apna Custom Design Banwane Ke Liye Inquiry Karein
+        </button>
+      </div>
+    </section>
+
+    <!-- Our Work Includes -->
+    <section class="section-container">
+      <div class="section-title">
+        <span>Our Work Includes</span>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item"><i class="fas fa-check-circle"></i> CNC 3D Carving</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Modern & Decorative Designs</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Wooden Door Design</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> High Precision Work</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Custom CNC Design (Any Design)</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Elegant Look</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Premium Finishing</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Premium Quality</div>
+      </div>
+
+      <div class="features-bar">
+        <div class="feature-box"><i class="fas fa-cog"></i>Precision Work</div>
+        <div class="feature-box"><i class="fas fa-gem"></i>Premium Quality</div>
+        <div class="feature-box"><i class="fas fa-handshake"></i>Customer Satisfaction</div>
+        <div class="feature-box"><i class="fas fa-thumbs-up"></i>On-Time Service</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- INQUIRY PAGE -->
+  <section id="page-inquiry" class="page-section">
+    <div class="inquiry-wrapper">
+      <h2>Design & Custom Order Inquiry</h2>
+      <p class="sub">Apni details bharein — aap apna koi bhi custom design ya pasandida door pattern directly <strong>Aakib (Bharat CNC Work)</strong> ke WhatsApp par bhej sakte hain.</p>
+
+      <form id="whatsappInquiryForm" onsubmit="sendToWhatsApp(event)">
+        <div class="form-group">
+          <label for="custName">Your Name (Aapka Naam) *</label>
+          <input type="text" id="custName" placeholder="Apna naam likhein..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="custPhone">Mobile Number *</label>
+          <input type="tel" id="custPhone" placeholder="Apna WhatsApp/Mobile number likhein..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="workType">Select Design / Work Type *</label>
+          <select id="workType" required>
+            <option value="Custom Design (Apni Pasand Ka Design)">Custom Design (Apni Pasand Ka Design)</option>
+            <option value="Royal Floral Door Carving">Royal Floral Door Carving</option>
+            <option value="Corner Floral Scroll Carving">Corner Floral Scroll Carving</option>
+            <option value="Vertical Door Center Panel">Vertical Door Center Panel</option>
+            <option value="Circular Lotus Mandala Panel">Circular Lotus Mandala Panel</option>
+            <option value="Framed Vine Door Carving">Framed Vine Door Carving</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="doorSize">Door Size / Wood Type (Optional)</label>
+          <input type="text" id="doorSize" placeholder="Jaise: 7x3 feet, Sagwan / Teak wood...">
+        </div>
+
+        <div class="form-group">
+          <label for="custMessage">Apne Custom Design Ki Detail Likhein</label>
+          <textarea id="custMessage" rows="3" placeholder="Batayein aapko kaisa design banwana hai (WhatsApp khulne par aap apni design photo bhi bhej sakte hain)..."></textarea>
+        </div>
+
+        <button type="submit" class="whatsapp-submit">
+          <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Send Inquiry on WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer with Owner Name, Contact & Full Location Address -->
+  <footer>
+    <div class="footer-grid">
+      <div class="owner-card">
+        <div class="label-small">Proprietor / Owner</div>
+        <div class="owner-name">Aakib</div>
+        <a href="tel:+916398526775"><i class="fas fa-phone-alt"></i> +91 63985 26775</a>
+      </div>
+
+      <div class="location-card">
+        <div class="loc-heading"><i class="fas fa-map-marker-alt"></i> Workshop Address / Location:</div>
+        <p>Bakra Market Near By Dildaar Hardware Store, Muzaffarnagar, Uttar Pradesh – 251001</p>
+      </div>
+    </div>
+    <div class="tagline">
+      “Your Dream Design... Our Craftsmanship...”
+    </div>
+  </footer>
+
+  <script>
+    function showPage(pageName) {
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById('page-' + pageName).classList.add('active');
+      document.getElementById('nav-' + pageName).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      const ownerWhatsApp = "916398526775";
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const workType = document.getElementById("workType").value;
+      const doorSize = document.getElementById("doorSize").value.trim() || "Not specified";
+      const message = document.getElementById("custMessage").value.trim() || "Mujhe custom wooden CNC design banwana hai.";
+
+      const whatsappText =
+        `*New Website Inquiry - Bharat CNC Work*%0A` +
+        `----------------------------------%0A` +
+        `*Name:* ${encodeURIComponent(name)}%0A` +
+        `*Mobile:* ${encodeURIComponent(phone)}%0A` +
+        `*Design/Work:* ${encodeURIComponent(workType)}%0A` +
+        `*Size/Wood:* ${encodeURIComponent(doorSize)}%0A` +
+        `*Details:* ${encodeURIComponent(message)}`;
+
+      const whatsappURL = `https://wa.me/${ownerWhatsApp}?text=${whatsappText}`;
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
+</body>
+</html>
