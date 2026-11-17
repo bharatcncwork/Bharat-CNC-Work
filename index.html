@@ -740,4 +740,152 @@
             <img src="design5.jpg" alt="Framed Vine Door Carving">
           </div>
           <div class="design-info">
-            <h3>Fr
+            <h3>Framed Vine Door Carving</h3>
+            <p>Elegant S-curve floral vine carved inside solid wooden frame.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Design Highlight Section -->
+      <div class="custom-design-banner">
+        <h2><i class="fas fa-magic"></i> Apni Pasand Ka Koi Bhi Custom Design Banwayein</h2>
+        <p>In designs ke alawa, <strong>koi bhi customer jaisa chahe waisa apna custom wooden design banwa sakta hai</strong>. Chahe aapke paas koi photo ho, naya modern pattern ho, ya special door size — hum aapki pasand ke mutabik 100% precision CNC carving taiyar karte hain.</p>
+        <div class="custom-tags">
+          <span class="custom-tag"><i class="fas fa-check"></i> Customer Choice Design</span>
+          <span class="custom-tag"><i class="fas fa-check"></i> Photo-to-Wood CNC Carving</span>
+          <span class="custom-tag"><i class="fas fa-check"></i> Any Door & Panel Size</span>
+          <span class="custom-tag"><i class="fas fa-check"></i> 3D & 2D Custom Patterns</span>
+        </div>
+        <button class="btn-primary" onclick="showPage('inquiry')">
+          <i class="fab fa-whatsapp"></i> Apna Custom Design Banwane Ke Liye Inquiry Karein
+        </button>
+      </div>
+    </section>
+
+    <!-- Our Work Includes -->
+    <section class="section-container">
+      <div class="section-title">
+        <span>Our Work Includes</span>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item"><i class="fas fa-check-circle"></i> CNC 3D Carving</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Modern & Decorative Designs</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Wooden Door Design</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> High Precision Work</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Custom CNC Design (Any Design)</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Elegant Look</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Premium Finishing</div>
+        <div class="service-item"><i class="fas fa-check-circle"></i> Premium Quality</div>
+      </div>
+
+      <div class="features-bar">
+        <div class="feature-box"><i class="fas fa-cog"></i>Precision Work</div>
+        <div class="feature-box"><i class="fas fa-gem"></i>Premium Quality</div>
+        <div class="feature-box"><i class="fas fa-handshake"></i>Customer Satisfaction</div>
+        <div class="feature-box"><i class="fas fa-thumbs-up"></i>On-Time Service</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- INQUIRY PAGE -->
+  <section id="page-inquiry" class="page-section">
+    <div class="inquiry-wrapper">
+      <h2>Design & Custom Order Inquiry</h2>
+      <p class="sub">Apni details bharein — aap apna koi bhi custom design ya pasandida door pattern directly <strong>Aakib (Bharat CNC Work)</strong> ke WhatsApp par bhej sakte hain.</p>
+
+      <form id="whatsappInquiryForm" onsubmit="sendToWhatsApp(event)">
+        <div class="form-group">
+          <label for="custName">Your Name (Aapka Naam) *</label>
+          <input type="text" id="custName" placeholder="Apna naam likhein..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="custPhone">Mobile Number *</label>
+          <input type="tel" id="custPhone" placeholder="Apna WhatsApp/Mobile number likhein..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="workType">Select Design / Work Type *</label>
+          <select id="workType" required>
+            <option value="Custom Design (Apni Pasand Ka Design)">Custom Design (Apni Pasand Ka Design)</option>
+            <option value="Royal Floral Door Carving">Royal Floral Door Carving</option>
+            <option value="Corner Floral Scroll Carving">Corner Floral Scroll Carving</option>
+            <option value="Vertical Door Center Panel">Vertical Door Center Panel</option>
+            <option value="Circular Lotus Mandala Panel">Circular Lotus Mandala Panel</option>
+            <option value="Framed Vine Door Carving">Framed Vine Door Carving</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="doorSize">Door Size / Wood Type (Optional)</label>
+          <input type="text" id="doorSize" placeholder="Jaise: 7x3 feet, Sagwan / Teak wood...">
+        </div>
+
+        <div class="form-group">
+          <label for="custMessage">Apne Custom Design Ki Detail Likhein</label>
+          <textarea id="custMessage" rows="3" placeholder="Batayein aapko kaisa design banwana hai (WhatsApp khulne par aap apni design photo bhi bhej sakte hain)..."></textarea>
+        </div>
+
+        <button type="submit" class="whatsapp-submit">
+          <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Send Inquiry on WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer with Owner Name, Contact & Full Location Address -->
+  <footer>
+    <div class="footer-grid">
+      <div class="owner-card">
+        <div class="label-small">Proprietor / Owner</div>
+        <div class="owner-name">Aakib</div>
+        <a href="tel:+916398526775"><i class="fas fa-phone-alt"></i> +91 63985 26775</a>
+      </div>
+
+      <div class="location-card">
+        <div class="loc-heading"><i class="fas fa-map-marker-alt"></i> Workshop Address / Location:</div>
+        <p>Bakra Market Near By Dildaar Hardware Store, Muzaffarnagar, Uttar Pradesh – 251001</p>
+      </div>
+    </div>
+    <div class="tagline">
+      “Your Dream Design... Our Craftsmanship...”
+    </div>
+  </footer>
+
+  <script>
+    function showPage(pageName) {
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById('page-' + pageName).classList.add('active');
+      document.getElementById('nav-' + pageName).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      const ownerWhatsApp = "916398526775";
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const workType = document.getElementById("workType").value;
+      const doorSize = document.getElementById("doorSize").value.trim() || "Not specified";
+      const message = document.getElementById("custMessage").value.trim() || "Mujhe custom wooden CNC design banwana hai.";
+
+      const whatsappText =
+        `*New Website Inquiry - Bharat CNC Work*%0A` +
+        `----------------------------------%0A` +
+        `*Name:* ${encodeURIComponent(name)}%0A` +
+        `*Mobile:* ${encodeURIComponent(phone)}%0A` +
+        `*Design/Work:* ${encodeURIComponent(workType)}%0A` +
+        `*Size/Wood:* ${encodeURIComponent(doorSize)}%0A` +
+        `*Details:* ${encodeURIComponent(message)}`;
+
+      const whatsappURL = `https://wa.me/${ownerWhatsApp}?text=${whatsappText}`;
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
+</body>
+</html>
